@@ -1,0 +1,92 @@
+﻿@model WebCadastroGames.Models.Funcionario
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Funcionario</h2>
+<h3> Cadastrar Funcionário </h3>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    <legend> Cadastro de Funcionários </legend>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.FuncCod) <!--Label com o mesmo nome do atributo-->
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.FuncCod)
+        @Html.ValidationMessageFor(m => m.FuncCod)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.FuncNome)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.FuncNome)
+        @Html.ValidationMessageFor(m => m.FuncNome)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.FuncCPF)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.FuncCPF)
+        @Html.ValidationMessageFor(m => m.FuncCPF)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.FuncRG)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.FuncRG)
+        @Html.ValidationMessageFor(m => m.FuncRG)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.FuncDtNasc)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.FuncDtNasc)
+        @Html.ValidationMessageFor(m => m.FuncDtNasc)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.FuncEnd)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.FuncEnd)
+        @Html.ValidationMessageFor(m => m.FuncEnd)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.FuncTel)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.FuncTel)
+        @Html.ValidationMessageFor(m => m.FuncTel)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.FuncEmail)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.FuncEmail)
+        @Html.ValidationMessageFor(m => m.FuncEmail)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.FuncCargo)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.FuncCargo)
+        @Html.ValidationMessageFor(m => m.FuncCargo)
+    </div>
+
+    <div>
+        <input type="submit" value="Enviar" />
+    </div>
+
+</fieldset>
+}
