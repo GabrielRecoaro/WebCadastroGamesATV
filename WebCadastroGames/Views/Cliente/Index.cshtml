@@ -1,7 +1,70 @@
-﻿
+﻿@model WebCadastroGames.Models.Cliente
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Cliente</h2>
+
+<h2>Funcionario</h2>
+<h3> Cadastrar Cliente </h3>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend> Cadastro de Clientes </legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(m => m.CliNome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.CliNome)
+            @Html.ValidationMessageFor(m => m.CliNome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(m => m.CliCPF)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.CliCPF)
+            @Html.ValidationMessageFor(m => m.CliCPF)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(m => m.CliDtNasc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.CliDtNasc)
+            @Html.ValidationMessageFor(m => m.CliDtNasc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(m => m.CliEmail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.CliEmail)
+            @Html.ValidationMessageFor(m => m.CliEmail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(m => m.CliTel)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.CliTel)
+            @Html.ValidationMessageFor(m => m.CliTel)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(m => m.CliEnd)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.CliEnd)
+            @Html.ValidationMessageFor(m => m.CliEnd)
+        </div>
+
+        <div>
+            <br><input type="submit" value="Enviar" />
+        </div>
+
+    </fieldset>
+}
 
