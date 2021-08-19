@@ -9,13 +9,13 @@ namespace WebCadastroGames.Models
     {
         public string CliNome { get; set; }
 
-        public ushort CliCPF { get; set; }
+        public string CliCPF { get; set; }
 
         public DateTime CliDtNasc { get; set; }
 
         public string CliEmail { get; set; }
 
-        public int CliTel { get; set; }
+        public string CliTel { get; set; }
 
         public string CliEnd { get; set; }
     }

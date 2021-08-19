@@ -23,4 +23,6 @@ namespace WebCadastroGames.Controllers
             return View("Listar", funcionario);
         }
     }
+
+   
 }

@@ -11,7 +11,7 @@ namespace WebCadastroGames.Models
 
         public string JogoNome { get; set; }
 
-        public  int JogoVers { get; set; }
+        public  string JogoVers { get; set; }
 
         public string JogoDes { get; set; }
 
