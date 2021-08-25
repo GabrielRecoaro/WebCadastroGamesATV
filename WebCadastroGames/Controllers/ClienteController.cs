@@ -20,9 +20,17 @@ namespace WebCadastroGames.Controllers
 
         [HttpPost]
 
-        public ActionResult Index (Cliente cliente)
+        public ActionResult Index(Cliente cliente)
         {
-            return View("Listar", cliente);
+            if (ModelState.IsValid)
+            {
+                return View("Listar", cliente);
+            }
+            return View(cliente);
+        }
+        public ActionResult Listar(Cliente cliente)
+        {
+            return View(cliente);
         }
 
     }

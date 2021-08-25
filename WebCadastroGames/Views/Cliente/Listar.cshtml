@@ -1,0 +1,31 @@
+﻿@model WebCadastroGames.Models.Cliente
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+<fieldset>
+    <legend>Listar Cliente</legend>
+
+    <b><div class="editor-label">@Html.DisplayNameFor(m => m.CliNome)</div></b>
+    <div class="editor-field">@Html.DisplayFor(m => m.CliNome)</div>
+    <br />
+    <b><div class="editor-label">@Html.DisplayNameFor(m => m.CliCPF)</div></b>
+    <div class="editor-field">@Html.DisplayFor(m => m.CliCPF)</div>
+    <br />
+    <b><div class="editor-label">@Html.DisplayNameFor(m => m.CliDtNasc)</div></b>
+    <div class="editor-field">@Html.DisplayFor(m => m.CliDtNasc)</div>
+    <br />
+    <b><div class="editor-label">@Html.DisplayNameFor(m => m.CliEmail)</div></b>
+    <div class="editor-field">@Html.DisplayFor(m => m.CliEmail)</div>
+    <br />
+    <b><div class="editor-label">@Html.DisplayNameFor(m => m.CliTel)</div></b>
+    <div class="editor-field">@Html.DisplayFor(m => m.CliTel)</div>
+    <br />
+    <b><div class="editor-label">@Html.DisplayNameFor(m => m.CliEnd)</div></b>
+    <div class="editor-field">@Html.DisplayFor(m => m.CliEnd)</div>
+
+
+</fieldset>
+<br><a href="~/">Voltar</a>
+

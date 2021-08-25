@@ -20,7 +20,17 @@ namespace WebCadastroGames.Controllers
 
         public ActionResult Index(Jogo jogo)
         {
-            return View("Listar", jogo);
+            if (ModelState.IsValid)
+            {
+                return View("Listar", jogo);
+            }
+            return View(jogo);
         }
+
+        public ActionResult Listar(Jogo jogo)
+        {
+            return View(jogo);
+        }
+        
     }
 }

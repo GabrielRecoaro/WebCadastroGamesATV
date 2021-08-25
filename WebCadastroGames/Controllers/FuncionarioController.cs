@@ -20,7 +20,15 @@ namespace WebCadastroGames.Controllers
 
         public ActionResult Index(Funcionario funcionario)
         {
-            return View("Listar", funcionario);
+            if (ModelState.IsValid)
+            {
+                return View("Listar", funcionario);
+            }
+            return View(funcionario);
+        }
+        public ActionResult Listar(Funcionario funcionario)
+        {
+            return View(funcionario);
         }
     }
 
