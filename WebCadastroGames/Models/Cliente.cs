@@ -40,9 +40,9 @@ namespace WebCadastroGames.Models
         private DateTime? cliDtNasc = null;
 
 
-        [Display(Name = "Email")]
-        [Required(ErrorMessage = "*O campo email é obrigatório")]
-        [StringLength(30, MinimumLength = 10, ErrorMessage = "*O campo permite apenas de 10 a 30 caracteres")]
+        [Display(Name = "E-mail")]
+        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "E-mail em formato inválido.")]
+        [Required(ErrorMessage = "*O campo E-mail é obrigatório")]
         public string CliEmail { get; set; }
 
         [Display(Name ="Telefone de contato")]

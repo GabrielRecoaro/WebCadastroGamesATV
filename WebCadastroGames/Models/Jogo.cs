@@ -9,8 +9,8 @@ namespace WebCadastroGames.Models
     public class Jogo
     {
         [Display(Name="Código")]
-        [Range(1, 10, ErrorMessage = "O código deve ter de 1 a 10 caracteres")]
-        public ushort JogoCod { get; set; }
+        [Range(1, 10, ErrorMessage = "*Código inválido")]
+        public int JogoCod { get; set; }
 
         [Display(Name="Nome")]
         [Required(ErrorMessage = "*O campo nome é obrigatório")]
@@ -32,7 +32,7 @@ namespace WebCadastroGames.Models
 
         [Display(Name="Faixa Etária")]
         [Required(ErrorMessage = "*O campo faixa etária é obrigatório")]
-        [StringLength(3, MinimumLength = 2, ErrorMessage = "*O campo permite apenas de 2 a 3 caracteres")]
+        [StringLength(10, MinimumLength = 2, ErrorMessage = "*O campo permite apenas de 2 a 10 caracteres")]
         public string JogoFaixa { get; set; }
 
         [Display(Name="Plataforma")]
