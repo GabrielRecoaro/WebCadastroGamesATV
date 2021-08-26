@@ -9,12 +9,13 @@ namespace WebCadastroGames.Models
     public class Funcionario
     {
         [Display(Name = "Código")]
+        [Required(ErrorMessage = "*O campo código é obrigatório")]
         [Range(1,4, ErrorMessage = "*Código inválido")]
         public int FuncCod { get; set; }
 
         [Display(Name = "Nome")]
         [Required(ErrorMessage = "*O campo nome é obrigatório")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "*O campo permite apenas de 3 a 50 caracteres")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "*O campo permite apenas 3 a 50 caracteres")]
         public string FuncNome { get; set; }
 
         [Display(Name = "CPF")]
@@ -49,12 +50,12 @@ namespace WebCadastroGames.Models
         private DateTime? funcDtNasc = null;
         [Display(Name = "Endereço")]
         [Required(ErrorMessage = "*O campo endereço é obrigatório")]
-        [StringLength(30, MinimumLength = 2, ErrorMessage = "*O campo permite apenas de 5 a 30 caracteres")]
+        [StringLength(30, MinimumLength = 2, ErrorMessage = "*O campo permite apenas 5 a 30 caracteres")]
         public string FuncEnd { get; set; }
 
-        [Display(Name = "Telefone de contato")]
-        [Required(ErrorMessage = "*O campo telefone é obrigatório")]
-        [StringLength(15, MinimumLength = 10, ErrorMessage = "*O campo permite apenas de 10 a 15 caracteres")]
+        [Display(Name = "Número de contato")]
+        [Required(ErrorMessage = "*O campo número é obrigatório")]
+        [StringLength(15, MinimumLength = 10, ErrorMessage = "*Número de contato inválido")]
         public string FuncTel { get; set; }
 
         [Display(Name = "E-mail")]
@@ -64,7 +65,7 @@ namespace WebCadastroGames.Models
 
         [Display(Name = "Cargo")]
         [Required(ErrorMessage = "*O campo cargo é obrigatório")]
-        [StringLength(15, MinimumLength = 5, ErrorMessage = "*O campo permite apenas de 5 a 15 caracteres")]
+        [StringLength(15, MinimumLength = 5, ErrorMessage = "*O campo permite apenas 5 a 15 caracteres")]
         public string FuncCargo { get; set; }
 
     }
