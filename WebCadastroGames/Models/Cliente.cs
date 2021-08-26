@@ -10,9 +10,12 @@ namespace WebCadastroGames.Models
     {
         [Display(Name = "Nome")]
         [Required(ErrorMessage = "*O campo nome é obrigatório")]
+        [StringLength(30, MinimumLength = 2, ErrorMessage = "*O campo permite apenas de 2 a 30 caracteres")]
         public string CliNome { get; set; }
 
         [Display(Name = "CPF")]
+        [Required(ErrorMessage = "*O campo CPF é obrigatório")]
+        [StringLength(12, MinimumLength = 9, ErrorMessage = "*CPF inválido")]
         public string CliCPF { get; set; }
 
         [Display(Name = "Data de nascimento")]
@@ -38,12 +41,18 @@ namespace WebCadastroGames.Models
 
 
         [Display(Name = "Email")]
+        [Required(ErrorMessage = "*O campo email é obrigatório")]
+        [StringLength(30, MinimumLength = 10, ErrorMessage = "*O campo permite apenas de 10 a 30 caracteres")]
         public string CliEmail { get; set; }
 
         [Display(Name ="Telefone de contato")]
+        [Required(ErrorMessage = "*O campo telefone de contato é obrigatório")]
+        [StringLength(15, MinimumLength = 10, ErrorMessage = "*O campo permite apenas de 10 a 15 caracteres")]
         public string CliTel { get; set; }
 
         [Display(Name ="Endereço")]
+        [Required(ErrorMessage = "*O campo endereço é obrigatório")]
+        [StringLength(30, MinimumLength = 2, ErrorMessage = "*O campo permite apenas de 5 a 30 caracteres")]
         public string CliEnd { get; set; }
     }
 }
