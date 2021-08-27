@@ -41,8 +41,8 @@ namespace WebCadastroGames.Models
         [StringLength(10, MinimumLength = 2, ErrorMessage = "*O campo permite apenas 2 a 10 caracteres")]
         public string JogoPlat { get; set; }
 
-        [Display(Name = "Data de lançamento")]
-        [Required(ErrorMessage = "*A data de lançamento é obrigatória")]
+        [Display(Name = "Ano de lançamento")]
+        [Required(ErrorMessage = "*O campo ano de lançamento é obrigatória")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime JogoDtLanc
         {

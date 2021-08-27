@@ -25,7 +25,7 @@ namespace WebCadastroGames.Models
 
         [Display(Name = "RG")]
         [Required(ErrorMessage = "*O campo RG é obrigatório")]
-        [StringLength(12, MinimumLength = 9, ErrorMessage = "*RG inválido")]
+        [StringLength(15, MinimumLength = 12, ErrorMessage = "*RG inválido")]
         public string FuncRG { get; set; }
 
         [Display(Name = "Data de nascimento")]
@@ -53,8 +53,8 @@ namespace WebCadastroGames.Models
         [StringLength(30, MinimumLength = 2, ErrorMessage = "*O campo permite apenas 5 a 30 caracteres")]
         public string FuncEnd { get; set; }
 
-        [Display(Name = "Número de contato")]
-        [Required(ErrorMessage = "*O campo número é obrigatório")]
+        [Display(Name = "Celular")]
+        [Required(ErrorMessage = "*O campo celular é obrigatório")]
         [StringLength(15, MinimumLength = 10, ErrorMessage = "*Número de contato inválido")]
         public string FuncTel { get; set; }
 
