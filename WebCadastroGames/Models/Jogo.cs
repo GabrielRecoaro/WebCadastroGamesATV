@@ -64,7 +64,7 @@ namespace WebCadastroGames.Models
 
         [Display(Name="Sinopse")]
         [Required(ErrorMessage = "*O campo sinopse é obrigatório")]
-        [StringLength(100, MinimumLength = 10, ErrorMessage = "*O campo permite apenas 10 a 100 caracteres")]
+        [StringLength(300, MinimumLength = 10, ErrorMessage = "*O campo permite apenas 10 a 300 caracteres")]
         public string JogoSinopse { get; set; }
     }
 }

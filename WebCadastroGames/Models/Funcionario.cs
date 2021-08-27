@@ -20,7 +20,7 @@ namespace WebCadastroGames.Models
 
         [Display(Name = "CPF")]
         [Required(ErrorMessage = "*O campo CPF é obrigatório")]
-        [StringLength(12, MinimumLength = 9, ErrorMessage = "*CPF inválido")]
+        [StringLength(14, MinimumLength = 9, ErrorMessage = "*CPF inválido")]
         public string FuncCPF { get; set; }
 
         [Display(Name = "RG")]
@@ -55,7 +55,7 @@ namespace WebCadastroGames.Models
 
         [Display(Name = "Celular")]
         [Required(ErrorMessage = "*O campo celular é obrigatório")]
-        [StringLength(15, MinimumLength = 10, ErrorMessage = "*Número de contato inválido")]
+        [StringLength(17, MinimumLength = 10, ErrorMessage = "*Número de contato inválido")]
         public string FuncTel { get; set; }
 
         [Display(Name = "E-mail")]
