@@ -15,7 +15,7 @@ namespace WebCadastroGames.Models
 
         [Display(Name="Nome")]
         [Required(ErrorMessage = "*O campo nome é obrigatório")]
-        [StringLength(30, MinimumLength = 2, ErrorMessage = "*O campo permite apenas 2 a 30 caracteres")]
+        [StringLength(30, MinimumLength = 2, ErrorMessage = "*O campo nome permite apenas 2 a 30 caracteres")]
         public string JogoNome { get; set; }
 
         [Display(Name="Versão")]
@@ -23,26 +23,26 @@ namespace WebCadastroGames.Models
 
         [Display(Name="Desenvolvedor")]
         [Required(ErrorMessage = "*O campo desenvolvedor é obrigatório")]
-        [StringLength(30, MinimumLength = 4, ErrorMessage = "*O campo permite apenas 4 a 30 caracteres")]
+        [StringLength(30, MinimumLength = 4, ErrorMessage = "*O campo desenvolvedor permite apenas 4 a 30 caracteres")]
         public string JogoDes { get; set; }
 
         [Display(Name="Gênero")]
         [Required(ErrorMessage = "*O campo gênero é obrigatório")]
-        [StringLength(30, MinimumLength = 2, ErrorMessage = "*O campo permite apenas 2 a 30 caracteres")]
+        [StringLength(30, MinimumLength = 2, ErrorMessage = "*O campo gênero permite apenas 2 a 30 caracteres")]
         public string JogoGender { get; set; }
 
         [Display(Name="Faixa Etária")]
         [Required(ErrorMessage = "*O campo faixa etária é obrigatório")]
-        [StringLength(10, MinimumLength = 2, ErrorMessage = "*O campo permite apenas 2 a 10 caracteres")]
+        [StringLength(10, MinimumLength = 2, ErrorMessage = "*O campo faixa etária permite apenas 2 a 10 caracteres")]
         public string JogoFaixa { get; set; }
 
         [Display(Name="Plataforma")]
         [Required(ErrorMessage = "*O campo plataforma é obrigatório")]
-        [StringLength(10, MinimumLength = 2, ErrorMessage = "*O campo permite apenas 2 a 10 caracteres")]
+        [StringLength(10, MinimumLength = 2, ErrorMessage = "*O campo plataforma permite apenas 2 a 10 caracteres")]
         public string JogoPlat { get; set; }
 
-        [Display(Name = "Ano de lançamento")]
-        [Required(ErrorMessage = "*O campo ano de lançamento é obrigatória")]
+        [Display(Name = "Data de lançamento")]
+        [Required(ErrorMessage = "*O campo data de lançamento é obrigatório")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime JogoDtLanc
         {

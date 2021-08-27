@@ -41,7 +41,7 @@ namespace WebCadastroGames.Models
 
 
         [Display(Name = "E-mail")]
-        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "E-mail em formato inválido.")]
+        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "*E-mail em formato inválido.")]
         [Required(ErrorMessage = "*O campo E-mail é obrigatório")]
         public string CliEmail { get; set; }
 
