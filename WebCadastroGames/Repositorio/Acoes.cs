@@ -15,8 +15,8 @@ namespace WebCadastroGames.Repositorio
 
         public void CadastrarFuncionario(Funcionario func)
         {
-            string data_sistema = Convert.ToDateTime(func.FuncDtNasc).ToString("yyyy-MM-dd");
-            cmd.Parameters.Add("@funcCod", MySqlDbType.VarChar).Value = FuncCod;
+            //string data_sistema = Convert.ToDateTime(func.FuncDtNasc).ToString("yyyy-MM-dd");
+            //cmd.Parameters.Add("@funcCod", MySqlDbType.VarChar).Value = FuncCod;
         }
     }
 }
