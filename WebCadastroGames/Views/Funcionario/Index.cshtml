@@ -5,7 +5,7 @@
 
 <h2>Novo <b>Funcionário</b></h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("CadFuncionario","Home", FormMethod.Post))
 {
     @Html.ValidationSummary(true)
 

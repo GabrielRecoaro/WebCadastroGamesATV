@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using WebCadastroGames.Repositorio;
 using System.Web.Mvc;
 using WebCadastroGames.Models;
+using WebCadastroGames.Repositorio;
 
 namespace WebCadastroGames.Controllers
 {

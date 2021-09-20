@@ -175,6 +175,7 @@
     <Content Include="Views\Funcionario\Listar.cshtml" />
     <Content Include="Views\Cliente\Listar.cshtml" />
     <Content Include="Views\Jogo\Listar.cshtml" />
+    <Content Include="Views\Funcionario\CadFuncionario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
