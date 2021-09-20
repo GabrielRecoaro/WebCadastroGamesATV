@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WebCadastroGames.Repositorio;
 using System.Web.Mvc;
 using WebCadastroGames.Models;
 
@@ -9,26 +10,31 @@ namespace WebCadastroGames.Controllers
 {
     public class FuncionarioController : Controller
     {
-        // GET: Funcionario
         public ActionResult Index()
+        {
+            return View();
+        }
+        
+        public ActionResult Funcionario()
         {
             var funcionario = new Funcionario();
             return View(funcionario);
         }
+        Acoes ac = new Acoes();
 
         [HttpPost]
 
-        public ActionResult Index(Funcionario funcionario)
+        public ActionResult Cadfuncionario(Funcionario fun)
         {
-            if (ModelState.IsValid)
-            {
-                return View("Listar", funcionario);
-            }
-            return View(funcionario);
+            ac.CadastrarFuncionario(fun);
+            return View(fun);
         }
-        public ActionResult Listar(Funcionario funcionario)
+
+        public ActionResult ListarFuncionario()
         {
-            return View(funcionario);
+            var ExibirFunc = new Acoes();
+            var TodosFunc = ExibirFunc.ListarFuncionario();
+            return View(TodosFunc);
         }
     }
 
