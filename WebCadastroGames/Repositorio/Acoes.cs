@@ -18,8 +18,13 @@ namespace WebCadastroGames.Repositorio
             string data_sistema = Convert.ToDateTime(func.FuncDtNasc).ToString("yyyy-MM-dd");
             cmd.Parameters.Add("@funcCod", MySqlDbType.VarChar).Value = func.FuncCod;
             cmd.Parameters.Add("@funcNome", MySqlDbType.VarChar).Value = func.FuncNome;
-            cmd.Parameters.Add("@funcFuncao", MySqlDbType.VarChar).Value = func.FuncFuncao;
+            cmd.Parameters.Add("@funcCPF", MySqlDbType.VarChar).Value = func.FuncCPF;
+            cmd.Parameters.Add("@funcRG", MySqlDbType.VarChar).Value = func.FuncRG;
             cmd.Parameters.Add("@funcDtNasc", MySqlDbType.DateTime).Value = data_sistema;
+            cmd.Parameters.Add("@funcEnd", MySqlDbType.VarChar).Value = func.FuncEnd;
+            cmd.Parameters.Add("@funcTel", MySqlDbType.VarChar).Value = func.FuncTel;
+            cmd.Parameters.Add("@funcEmail", MySqlDbType.VarChar).Value = func.FuncEmail;
+            cmd.Parameters.Add("@funcCargo", MySqlDbType.VarChar).Value = func.FuncCargo;
             cmd.ExecuteNonQuery();
             con.DesconectarBD();
 
