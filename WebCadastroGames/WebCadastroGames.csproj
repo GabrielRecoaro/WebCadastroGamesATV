@@ -172,7 +172,7 @@
     <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Views\Funcionario\Index.cshtml" />
     <Content Include="Views\Jogo\Index.cshtml" />
-    <Content Include="Views\Funcionario\Listar.cshtml" />
+    <Content Include="Views\Funcionario\ListarFuncionario.cshtml" />
     <Content Include="Views\Cliente\Listar.cshtml" />
     <Content Include="Views\Jogo\Listar.cshtml" />
     <Content Include="Views\Funcionario\CadFuncionario.cshtml" />

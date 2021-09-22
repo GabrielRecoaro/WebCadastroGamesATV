@@ -16,6 +16,7 @@ namespace WebCadastroGames.Repositorio
         public void CadastrarFuncionario(Funcionario func)
         {
             string data_sistema = Convert.ToDateTime(func.FuncDtNasc).ToString("yyyy-MM-dd");
+            MySqlCommand cmd = new MySqlCommand("insert into Funcionario valuews(@funcCOd, @funcNome, @funcCPF, @funcRG, @funcDtNasc, @funcEnd, @funcTel, @funcEmail, @funcCargo)", con.ConectarBD());
             cmd.Parameters.Add("@funcCod", MySqlDbType.VarChar).Value = func.FuncCod;
             cmd.Parameters.Add("@funcNome", MySqlDbType.VarChar).Value = func.FuncNome;
             cmd.Parameters.Add("@funcCPF", MySqlDbType.VarChar).Value = func.FuncCPF;
@@ -36,7 +37,7 @@ namespace WebCadastroGames.Repositorio
             var comando = String.Format("select * from Funcionario where funcCod = {0}", cod);
             MySqlCommand cmd = new MySqlCommand(comando, con.ConectarBD());
             var DadosCodFunc = cmd.ExecuteReader();
-            return ListarCodFuncionario(DadosCodFunc).FirstOrDefault();
+            return ListarCodFunc(DadosCodFunc).FirstOrDefault();
         }
 
         public List<Funcionario> ListarCodFunc(MySqlDataReader dt)
