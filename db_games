@@ -53,3 +53,6 @@ select * from tbFuncionario;
 select * from tbJogo;
 
 select * from tbCliente;
+
+CREATE USER 'dbjogos'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345';
+GRANT ALL PRIVILEGES ON db_games.* TO 'dbjogos'@'localhost' WITH GRANT OPTION;
