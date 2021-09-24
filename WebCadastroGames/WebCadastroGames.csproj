@@ -170,12 +170,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
-    <Content Include="Views\Funcionario\Index.cshtml" />
+    <Content Include="Views\Funcionario\Funcionario.cshtml" />
     <Content Include="Views\Jogo\Index.cshtml" />
     <Content Include="Views\Funcionario\ListarFuncionario.cshtml" />
     <Content Include="Views\Cliente\Listar.cshtml" />
     <Content Include="Views\Jogo\Listar.cshtml" />
-    <Content Include="Views\Funcionario\CadFuncionario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

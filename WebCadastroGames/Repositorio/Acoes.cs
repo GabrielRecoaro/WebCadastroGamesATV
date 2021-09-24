@@ -34,7 +34,7 @@ namespace WebCadastroGames.Repositorio
 
         public Funcionario ListarCodFuncionario(int cod)
         {
-            var comando = String.Format("select * from Funcionario where funcCod = {0}", cod);
+            var comando = String.Format("select * from tbFuncionario where funcCod = {0}", cod);
             MySqlCommand cmd = new MySqlCommand(comando, con.ConectarBD());
             var DadosCodFunc = cmd.ExecuteReader();
             return ListarCodFunc(DadosCodFunc).FirstOrDefault();
@@ -67,14 +67,14 @@ namespace WebCadastroGames.Repositorio
 
         public List<Funcionario> ListarFuncionario()
         {
-            MySqlCommand cmd = new MySqlCommand("Select * from Funcionario", con.ConectarBD());
+            MySqlCommand cmd = new MySqlCommand("Select * from tbFuncionario", con.ConectarBD());
             var DadosFuncionario = cmd.ExecuteReader();
             return ListarTodosFuncionario(DadosFuncionario);
         }
 
         public List<Funcionario> ListarTodosFuncionario(MySqlDataReader dt)
         {
-            var TodosFuncioanrios = new List<Funcionario>();
+            var TodosFuncionarios = new List<Funcionario>();
             while(dt.Read())
             {
                 var FuncionarioTemp = new Funcionario()
@@ -90,10 +90,10 @@ namespace WebCadastroGames.Repositorio
                     FuncCargo = dt["funcCargo"].ToString(),
 
                 };
-                TodosFuncioanrios.Add(FuncionarioTemp);
+                TodosFuncionarios.Add(FuncionarioTemp);
             }
             dt.Close();
-            return TodosFuncioanrios;
+            return TodosFuncionarios;
         }
         
     }
