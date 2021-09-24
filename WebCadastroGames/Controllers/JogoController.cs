@@ -26,6 +26,23 @@ namespace WebCadastroGames.Controllers
         [HttpPost]
 
 
+        public ActionResult Jogo(Jogo jogo)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    ac.CadastrarJogo(jogo);
+                    return RedirectToAction("ListarJogo");
+                }
+                return View(jogo);
+            }
+            catch
+            {
+                return RedirectToAction("Jogo");
+            }
+        }
+
         public ActionResult ListarJogo(Jogo jogo)
         {
             var ExibirJogo = new Acoes();

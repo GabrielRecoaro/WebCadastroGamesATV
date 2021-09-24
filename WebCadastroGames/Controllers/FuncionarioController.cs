@@ -24,6 +24,23 @@ namespace WebCadastroGames.Controllers
 
         [HttpPost]
 
+        public ActionResult Funcionario(Funcionario funcionario)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    ac.CadastrarFuncionario(funcionario);
+                    return RedirectToAction("ListarFuncionario");
+                }
+                return View(funcionario);
+            }
+            catch
+            {
+                return RedirectToAction("Funcionario");
+            }
+        }
+
 
         public ActionResult ListarFuncionario()
         {
