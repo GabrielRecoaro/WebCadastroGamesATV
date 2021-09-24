@@ -24,17 +24,13 @@ namespace WebCadastroGames.Controllers
 
         [HttpPost]
 
-        public ActionResult Cadfuncionario(Funcionario fun)
-        {
-            ac.CadastrarFuncionario(fun);
-            return View(fun);
-        }
 
         public ActionResult ListarFuncionario()
         {
             var ExibirFunc = new Acoes();
             var TodosFunc = ExibirFunc.ListarFuncionario();
             return View(TodosFunc);
+
         }
     }
 

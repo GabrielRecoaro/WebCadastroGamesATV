@@ -1,31 +1,75 @@
-﻿@model WebCadastroGames.Models.Cliente
+﻿@model IEnumerable<WebCadastroGames.Models.Cliente>
 @{
-    ViewBag.Title = "Listar";
+    ViewBag.Title = "ListarCliente";
 }
 
-<h2>Dados registrados</h2>
-<fieldset>
-    <legend>Cliente</legend>
+<p>@Html.ActionLink("Cliente", "Cliente")</p>
 
-    <div class="editor-label"><b>@Html.DisplayNameFor(m => m.CliNome)</b></div>
-    <div class="editor-field">@Html.DisplayFor(m => m.CliNome)</div>
-    <br />
-    <div class="editor-label"><b>@Html.DisplayNameFor(m => m.CliCPF)</b></div>
-    <div class="editor-field">@Html.DisplayFor(m => m.CliCPF)</div>
-    <br />
-    <div class="editor-label"><b>@Html.DisplayNameFor(m => m.CliDtNasc)</b></div>
-    <div class="editor-field">@Html.DisplayFor(m => m.CliDtNasc)</div>
-    <br />
-    <div class="editor-label"><b>@Html.DisplayNameFor(m => m.CliEmail)</b></div>
-    <div class="editor-field">@Html.DisplayFor(m => m.CliEmail)</div>
-    <br />
-    <div class="editor-label"><b>@Html.DisplayNameFor(m => m.CliTel)</b></div>
-    <div class="editor-field">@Html.DisplayFor(m => m.CliTel)</div>
-    <br />
-    <div class="editor-label"><b>@Html.DisplayNameFor(m => m.CliEnd)</b></div>
-    <div class="editor-field">@Html.DisplayFor(m => m.CliEnd)</div>
+<table class="table">
+    <tr>
 
+        <th>
+            @Html.DisplayNameFor(m => m.CliNome)
+        </th>
 
-</fieldset>
-<br><a href="~/">Voltar</a>
+        <th>
+            @Html.DisplayNameFor(m => m.CliCPF)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.CliDtNasc)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.CliEmail)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.CliTel)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.CliEnd)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CliNome)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.CliCPF)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.CliDtNasc)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.CliEmail)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.CliTel)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.CliEnd)
+            </td>
+
+            <td>
+                @Html.ActionLink("Alterar", "AltCliente", null, new { cdCliente = item.CliCPF }, new { @class = "btn btn-primary btn-xs" })
+                @Html.ActionLink("Deletar", "DelCliente", null, new { cdCliente = item.CliCPF }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+
+        </tr>
+
+    }
+
+</table>
 

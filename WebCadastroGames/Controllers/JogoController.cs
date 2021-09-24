@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebCadastroGames.Models;
+using WebCadastroGames.Repositorio;
 
 namespace WebCadastroGames.Controllers
 {
@@ -12,25 +13,25 @@ namespace WebCadastroGames.Controllers
         // GET: Jogo
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult Jogo()
+        {
             var jogo = new Jogo();
             return View(jogo);
         }
 
+        Acoes ac = new Acoes();
         [HttpPost]
 
-        public ActionResult Index(Jogo jogo)
+
+        public ActionResult ListarJogo(Jogo jogo)
         {
-            if (ModelState.IsValid)
-            {
-                return View("Listar", jogo);
-            }
-            return View(jogo);
+            var ExibirJogo = new Acoes();
+            var TodosJogo = ExibirJogo.ListarJogo();
+            return View(TodosJogo);
         }
 
-        public ActionResult Listar(Jogo jogo)
-        {
-            return View(jogo);
-        }
-        
     }
 }

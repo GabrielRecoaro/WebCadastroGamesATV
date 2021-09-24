@@ -1,42 +1,86 @@
-﻿@model WebCadastroGames.Models.Jogo
+﻿@model IEnumerable<WebCadastroGames.Models.Jogo>
 @{
     ViewBag.Title = "Listar";
 }
 
-<h2>Dados registrados</h2>
-<fieldset>
-    <legend>Jogo</legend>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(m => m.JogoCod)
+        </th>
 
-    <div class="editor-label"><b>@Html.DisplayNameFor(m => m.JogoCod)</b></div>
-    <div class="editor-field">@Html.DisplayFor(m => m.JogoCod)</div>
-    <br />
-    <div class="editor-label"><b>@Html.DisplayNameFor(m => m.JogoNome)</b></div>
-    <div class="editor-field">@Html.DisplayFor(m => m.JogoNome)</div>
-    <br />
-    <div class="editor-label"><b>@Html.DisplayNameFor(m => m.JogoVers)</b></div>
-    <div class="editor-field">@Html.DisplayFor(m => m.JogoVers)</div>
-    <br />
-    <div class="editor-label"><b>@Html.DisplayNameFor(m => m.JogoDes)</b></div>
-    <div class="editor-field">@Html.DisplayFor(m => m.JogoDes)</div>
-    <br />
-    <div class="editor-label"><b>@Html.DisplayNameFor(m => m.JogoGender)</b></div>
-    <div class="editor-field">@Html.DisplayFor(m => m.JogoGender)</div>
-    <br />
-    <div class="editor-label"><b>@Html.DisplayNameFor(m => m.JogoFaixa)</b></div>
-    <div class="editor-field">@Html.DisplayFor(m => m.JogoFaixa)</div>
-    <br />
-    <div class="editor-label"><b>@Html.DisplayNameFor(m => m.JogoPlat)</b></div>
-    <div class="editor-field">@Html.DisplayFor(m => m.JogoPlat)</div>
-    <br />
-    <div class="editor-label"><b>@Html.DisplayNameFor(m => m.JogoDtLanc)</b></div>
-    <div class="editor-field">@Html.DisplayFor(m => m.JogoDtLanc)</div>
-    <br />
-    <div class="editor-label"><b>@Html.DisplayNameFor(m => m.JogoDtLanc)</b></div>
-    <div class="editor-field">@Html.DisplayFor(m => m.JogoCod)</div>
-    <br />
-    <div class="editor-label"><b>@Html.DisplayNameFor(m => m.JogoSinopse)</b></div>
-    <div class="editor-field">@Html.DisplayFor(m => m.JogoSinopse)</div>
+        <th>
+            @Html.DisplayNameFor(m => m.JogoNome)
+        </th>
 
-</fieldset>
+        <th>
+            @Html.DisplayNameFor(m => m.JogoVers)
+        </th>
 
-</br><a href="~/">Voltar</a>
+        <th>
+            @Html.DisplayNameFor(m => m.JogoGender)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.JogoFaixa)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.JogoPlat)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.JogoDtLanc)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(m => m.JogoSinopse)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JogoCod)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.JogoNome)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.JogoVers)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.JogoGender)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.JogoFaixa)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.JogoPlat)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.JogoDtLanc)
+
+            <td>
+                @Html.DisplayFor(modelItem => item.JogoSinopse)
+            </td>
+
+            <td>
+                @Html.ActionLink("Alterar", "AltJogo", null, new { cdJogo = item.JogoCod }, new { @class = "btn btn-primary btn-xs" })
+                @Html.ActionLink("Deletar", "DelJogo", null, new { cdJogo = item.JogoCod }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+
+        </tr>
+
+    }
+
+</table>
