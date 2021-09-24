@@ -1,0 +1,54 @@
+create database db_games;
+
+use db_games;
+
+create table tbFuncionario(
+
+funcCod int PRIMARY KEY,
+funcNome varchar(150) not null,
+funcCPF varchar(80) not null,
+funcRG varchar(80) not null,
+funcDtNasc datetime not null,
+funcEnd varchar(150) not null,
+funcTel varchar(150) not null,
+funcEmail varchar(150) not null,
+funcCargo varchar(150) not null
+
+);
+
+
+create table tbCliente(
+
+cliNome varchar(150) not null,
+cliCPF varchar(80) PRIMARY KEY,
+cliDtNasc datetime not null,
+cliEmail varchar(100) not null,
+cliTel varchar(80) not null,
+cliEnd varchar(150) not null
+
+);
+
+
+create table tbJogo(
+
+jogoCod int PRIMARY KEY,
+jogoNome varchar(150) not null,
+jogoVers varchar(80) not null,
+jogoDes varchar(100) not null,
+jogoGender varchar(50) not null,
+jogoFaixa varchar(100) not null,
+jogoPlat varchar(50) not null,
+jogoDtLanc datetime not null,
+jogoSinopse varchar(300) not null
+
+);
+
+
+select * from tbFuncionario;
+
+select * from tbJogo;
+
+select * from tbCliente;
+
+CREATE USER 'dbjogos'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345';
+GRANT ALL PRIVILEGES ON db_games.* TO 'dbjogos'@'localhost' WITH GRANT OPTION;
