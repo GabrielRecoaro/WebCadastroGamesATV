@@ -30,12 +30,12 @@ namespace WebCadastroGames.Controllers
             return View(fun);
         }
 
-        /*public ActionResult ListarFuncionario()
+        public ActionResult ListarFuncionario()
         {
             var ExibirFunc = new Acoes();
-            //var TodosFunc = ExibirFunc.ListarFuncionario();
-            //return View(TodosFunc);
-        }*/
+            var TodosFunc = ExibirFunc.ListarFuncionario();
+            return View(TodosFunc);
+        }
     }
 
    
