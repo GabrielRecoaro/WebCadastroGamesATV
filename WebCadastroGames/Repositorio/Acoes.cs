@@ -28,7 +28,7 @@ namespace WebCadastroGames.Repositorio
             cmd.Parameters.Add("@funcCargo", MySqlDbType.VarChar).Value = func.FuncCargo;
             cmd.ExecuteNonQuery();
             con.DesconectarBD();
-
+            //teste
             
         }
 
