@@ -16,7 +16,7 @@ namespace WebCadastroGames.Repositorio
         public void CadastrarFuncionario(Funcionario func)
         {
             string data_sistema = Convert.ToDateTime(func.FuncDtNasc).ToString("yyyy-MM-dd");
-            MySqlCommand cmd = new MySqlCommand("insert into Funcionario valuews(@funcCOd, @funcNome, @funcCPF, @funcRG, @funcDtNasc, @funcEnd, @funcTel, @funcEmail, @funcCargo)", con.ConectarBD());
+            MySqlCommand cmd = new MySqlCommand("insert into tbFuncionario values(@funcCod, @funcNome, @funcCPF, @funcRG, @funcDtNasc, @funcEnd, @funcTel, @funcEmail, @funcCargo)", con.ConectarBD());
             cmd.Parameters.Add("@funcCod", MySqlDbType.VarChar).Value = func.FuncCod;
             cmd.Parameters.Add("@funcNome", MySqlDbType.VarChar).Value = func.FuncNome;
             cmd.Parameters.Add("@funcCPF", MySqlDbType.VarChar).Value = func.FuncCPF;
@@ -32,6 +32,41 @@ namespace WebCadastroGames.Repositorio
             
         }
 
+        public void CadastrarJogo(Jogo jogo)
+        {
+            string data_sistema = Convert.ToDateTime(jogo.JogoDtLanc).ToString("yyyy-MM-dd");
+            MySqlCommand cmd = new MySqlCommand("insert into tbJogo values(@JogoCod, @JogoNome, @JogoVers, @JogoDes, @JogoGender, @JogoFaixa, @JogoPlat, @JogoDtLanc, @JogoSinopse)", con.ConectarBD());
+            cmd.Parameters.Add("@JogoCod", MySqlDbType.Int16).Value = jogo.JogoCod;
+            cmd.Parameters.Add("@JogoNome", MySqlDbType.VarChar).Value = jogo.JogoNome;
+            cmd.Parameters.Add("@JogoVers", MySqlDbType.VarChar).Value = jogo.JogoVers;
+            cmd.Parameters.Add("@JogoDes", MySqlDbType.VarChar).Value = jogo.JogoDes;
+            cmd.Parameters.Add("@JogoGender", MySqlDbType.VarChar).Value = jogo.JogoDes;
+            cmd.Parameters.Add("@JogoFaixa", MySqlDbType.VarChar).Value = jogo.JogoFaixa;
+            cmd.Parameters.Add("@JogoPlat", MySqlDbType.VarChar).Value = jogo.JogoPlat;
+            cmd.Parameters.Add("@JogoDtLanc", MySqlDbType.VarChar).Value = data_sistema;
+            cmd.Parameters.Add("@JogoSinopse", MySqlDbType.VarChar).Value = jogo.JogoSinopse;
+            cmd.ExecuteNonQuery();
+            con.DesconectarBD();
+
+
+        }
+
+        public void CadastrarCliente(Cliente cliente)
+        {
+            string data_sistema = Convert.ToDateTime(cliente.CliDtNasc).ToString("yyyy-MM-dd");
+            MySqlCommand cmd = new MySqlCommand("insert into tbCliente values(@CliNome, @CliCPF, @CliDtNasc, @CliEmail, @CliTel, @CliEnd)", con.ConectarBD());
+            cmd.Parameters.Add("@CliNome", MySqlDbType.VarChar).Value = cliente.CliNome;
+            cmd.Parameters.Add("@CliCPF", MySqlDbType.VarChar).Value = cliente.CliCPF;
+            cmd.Parameters.Add("@CliDtNasc", MySqlDbType.VarChar).Value = data_sistema;
+            cmd.Parameters.Add("@CliEmail", MySqlDbType.VarChar).Value = cliente.CliEmail;
+            cmd.Parameters.Add("@CliTel", MySqlDbType.DateTime).Value = cliente.CliTel;
+            cmd.Parameters.Add("@CliEnd", MySqlDbType.VarChar).Value = cliente.CliEnd;
+            cmd.ExecuteNonQuery();
+            con.DesconectarBD();
+
+
+        }
+        /******** código comentado ******
         public Funcionario ListarCodFuncionario(int cod)
         {
             var comando = String.Format("select * from tbFuncionario where funcCod = {0}", cod);
@@ -94,7 +129,8 @@ namespace WebCadastroGames.Repositorio
             }
             dt.Close();
             return TodosFuncionarios;
-        }
-        
+
+        }********* código comentado ******/
+
     }
 }

@@ -169,12 +169,12 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Cliente\Cliente.cshtml" />
     <Content Include="Views\Funcionario\Funcionario.cshtml" />
-    <Content Include="Views\Jogo\Index.cshtml" />
+    <Content Include="Views\Jogo\Jogo.cshtml" />
     <Content Include="Views\Funcionario\ListarFuncionario.cshtml" />
-    <Content Include="Views\Cliente\Listar.cshtml" />
-    <Content Include="Views\Jogo\Listar.cshtml" />
+    <Content Include="Views\Cliente\ListarCliente.cshtml" />
+    <Content Include="Views\Jogo\ListarJogo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -8,7 +8,7 @@ namespace WebCadastroGames.Repositorio
 {
     public class Conexao
     {
-        MySqlConnection cn = new MySqlConnection("Server=localhost;DataBase=db_games;user=root;pwd=12345");
+        MySqlConnection cn = new MySqlConnection("Server=localhost;DataBase=db_games;user=dbjogos;pwd=12345");
         public static string msg;
 
         public MySqlConnection ConectarBD()
